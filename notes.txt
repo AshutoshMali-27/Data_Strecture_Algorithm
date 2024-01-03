@@ -1,0 +1,79 @@
+Data Types in java
+
+primitive byte sh
+
+byte 
+short 
+char
+boolean
+int 
+long
+ float
+ double
+
+ Non-primitive
+ string 
+ array
+ class
+ Object
+ interface
+
+ Input in Java 
+ next
+ nextLine
+ nextInt
+ nextByte
+ nextFloat
+ nextDouble
+ nextBoolean
+ nextShort
+ nextLong
+
+
+ Type Conversion
+
+ conversion happen when:
+ 1.type compatible
+ 2.destination type >source type
+
+ Type Casting ->narrowing explicit 
+
+ Operator
+ Arithmatic Operators
+ Relational Operators
+ Logical Operators
+ Bitwise Operators
+ Assignment Operators
+
+
+ Arithamtic Operator
+Binary  + ,-,*,/,% 
+Unary ++,--
+
+Unary Operator
+-pre Increment
+++a  -: first value change then value use;
+
+post Increment
+a++ -:  first value use then value increment;
+
+
+Relational Operator
+==
+!=
+<
+>
+<=
+>=
+
+Assingment Operator
+=
++=
+-=
+*=
+/=
+
+Logical Operator
+&& -logical AND
+|| -Logical OR 
+!  -Logical NOT
