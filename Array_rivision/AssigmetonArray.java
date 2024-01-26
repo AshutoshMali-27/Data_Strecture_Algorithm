@@ -35,10 +35,16 @@ public class AssigmetonArray {
        // PrintPairs(number);
      //  printSubArray(number);
      //maxSubarraySum(number);
-     int number[]={1,-2,6,-1,3};
-     maxSubarraySumPrefix(number);
+    //  int number[]={1,-2,6,-1,3};
+    //  maxSubarraySumPrefix(number);
 
+   // int number[]={-2,-3,4,-1,-2,1,5,-3};
 
+    // maxsubarraysumkadanealgorithm(number);
+
+    int height[]={4,2,0,6,3,2,5};
+
+    System.out.println(Trappingrainwater(height));
     
     }
 
@@ -169,26 +175,73 @@ public static void maxSubarraySum(int number[]){
 
 public static void maxSubarraySumPrefix(int number[]){
 
-     int currsum=0;
-     int maxsum=Integer.MIN_VALUE;
-     int prefix[]=new int[number.length];
-     prefix[0]=number[0];
-     for(int i=1;i<prefix.length;i++){
-        prefix[i]=prefix[i-1]+number[i];
-     }
+ int currsum=0;
+ int maxsum=Integer.MIN_VALUE;
+ int prefix[]= new int [number.length];
 
-     for(int i=0;i<number.length;i++){
-        for(int j=i;j<number.length;j++){
-            currsum=0;
-            currsum=i==0? prefix[j]:prefix[j]-prefix[i-1];
-            if(maxsum < currsum){
-                maxsum=currsum;
-            }
-        }
-     }
-     System.out.println("max sum ="+maxsum);
+ prefix[0]=number[0];
+ for(int i=1;i<number.length;i++){
+    prefix[i]=prefix[i-1]+number[i];
+ }
+
+ for(int i=0;i<prefix.length;i++){
+    for(int j=i;j<prefix.length;j++){
+
+currsum = i==0 ?prefix[j]: prefix[j]-prefix[i-1];
+
+if(maxsum<currsum){
+    maxsum=currsum;
+}
+
+    }
+ }
+ System.out.println("max sum= " +maxsum);
 
 }
 
+
+public static void maxsubarraysumkadanealgorithm(int number[]){
+
+    int maxsum=Integer.MIN_VALUE;
+    int currsum=0;
+
+    for(int i=0;i<number.length;i++){
+        currsum=currsum+number[i];
+        if(currsum<0){
+            currsum=0;
+        }
+        maxsum=Math.max(maxsum, currsum);
+    }
+
+    System.out.println(maxsum);
+}
+
+
+public static int Trappingrainwater(int height[]){
+    int n=height.length;
+    int leftmax[]=new int [n];
+    leftmax[0]=height[0];
+    for(int i=1;i<n;i++){
+        leftmax[i]=Math.max(leftmax[i-1], height[i]);
+    }
+    int rightmax[]=new int [n];
+    rightmax[n-1]=height[n-1];
+    for(int i=n-2;i>=0;i--){
+        rightmax[i]=Math.max(height[i],rightmax[i+1]);
+    }
+
+    int trappedwater=0;
+    for(int i=0;i<n;i++){
+
+        int waterlevel=Math.min(rightmax[i], leftmax[i]);
+        trappedwater=trappedwater +(waterlevel -height[i]);
+    }
+
+  
+  
+    return trappedwater;
+
+    
+}
 
 }
