@@ -17,7 +17,7 @@ System.out.println(p1.getColor());
 }
 
 
-s
+
 
 
 
