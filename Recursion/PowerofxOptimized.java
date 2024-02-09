@@ -15,7 +15,8 @@ public class PowerofxOptimized {
             return 1;
         }
 
-        int halfpowersq=PowerofxOptimized(a,n/2)* PowerofxOptimized(a,n/2);
+        int halfpower=PowerofxOptimized(a,n/2);
+        int halfpowersq=halfpower* halfpower;
         if(n%2 !=0){
             halfpowersq=a*halfpowersq;
         }
