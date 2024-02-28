@@ -76,6 +76,12 @@ public class AssigmetonArray {
                 smallest=number[i];
             }
         }
+
+
+
+
+
+        
         System.out.println("Smallest value is "+smallest);
 
         return largest;

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class AssignmentOn2DArray {
     
     public static void main(String args[]){
-        //commit code as per requirement
+       
         int matrix[][]=new int [3][3];
         int n=matrix.length;
         int m=matrix[0].length;
