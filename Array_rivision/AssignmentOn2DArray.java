@@ -36,7 +36,7 @@ public class AssignmentOn2DArray {
     //   {27,29,37,48},
     //   {32,33,39,50}};
     //   int key=33;
-      staircaseSearch(matrix,key);
+      //staircaseSearch(matrix,key);
       //System.out.print(diagonalSum(matrix));
         
     }

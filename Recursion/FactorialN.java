@@ -1,11 +1,11 @@
-package Recursion;
+//package Recursion;
 
 public class FactorialN {
     
     public static void main(String args[]){
 
         int n=5;
-      //  fact(n)
+       fact(n);
         System.out.println(fact(n));
     }
 
