@@ -11,7 +11,17 @@
 //11.print half pyramid
 //12.Inverted half Pyramid
 //13.Reverse Half Pyramid
-//14. pyramid no.
+//14. half pyramid of no.
+//15. inverted half pyramid of no.
+//16. print Floyds Triangle
+//17.print 0-1 triangle
+//18.print character half pyramid
+//19 inverted half pyramid with  no 
+//12345
+//1234
+//123
+//12
+//1
 import java.util.Scanner;
 
 public class Rivisionofbasicjava {
@@ -194,9 +204,52 @@ public class Rivisionofbasicjava {
 //     System.out.println();
 // }
 
+// int n=5;
+// for(int i=n;i>=1;i--){
+//     for(int j=1;j<=i;j++){
+//         System.out.print(j);
+//     }
+//     System.out.println();
+// }
+
+// int n=5;
+// int number=1;
+// for(int i=1;i<=n;i++){
+//     for(int j=1;j<=i;j++){
+//         System.out.print(number+" ");
+//         number++;
+//     }
+//     System.out.println();
+// }
+
+// int n=5;
+// for(int i=1;i<=n;i++){
+//     for(int j=1;j<=i;j++){
+//         if((i+j)%2==0){
+//             System.out.print(1);
+//         }
+//         else{
+//             System.out.print(0);
+//         }
+//     }
+//     System.out.println();
+// }
+
+
+// int n=4;
+// char ch='A';
+// for (int i=1 ;i<=n;i++){
+//     for(int j=1;j<=i;j++){
+//         System.out.print(ch);
+//         ch++;
+//     }
+//     System.out.println();
+// }
+
+
 int n=5;
-for(int i=n;i>=1;i--){
-    for(int j=1;j<=i;j++){
+for(int i=1;i<=n;i++){
+    for(int j=1;j<=(n+1-i);j++){
         System.out.print(j);
     }
     System.out.println();
