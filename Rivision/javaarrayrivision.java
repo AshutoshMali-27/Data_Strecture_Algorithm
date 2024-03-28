@@ -8,6 +8,14 @@
 //8.binarysearch
 //9.Reverse of Array
 //10.pairs of array
+//11.max sum of array(brute force)
+//12.max sum of array(prefix method)
+//13.max sum of array(kadane algorithm)
+//14.min sum of array(brute force method)
+//15.min sum of array(prefix sum method)
+//16.min sum of array(kadane algorithm)
+//17.Trapping Rainwater
+//18.best time to buy and sell stock
 import java.util.Scanner;
 
 public class javaarrayrivision {
@@ -65,9 +73,136 @@ public class javaarrayrivision {
 //printpairs(number);
 //int number[]={2,4,6,8,10,12,14};
 //subarray(number);
-int number[]={2,4,6,8,10,12,14};
+//int number[]={2,4,6,8,10,12,14};
 // maxsubarraysum(number);
-kadanes(number);
+//kadanes(number);
+
+//int number[]={-1,4,8,9,-3,7,5};
+//minsubarraysumBruteforcemethod(number);
+//minsubarraysumusingPrefixmethod(number);
+//kadanealgorithm(number);
+
+//int height[]={4,2,0,6,3,2,5};
+//System.out.println(trappedrainwater(height));
+int prices[]={7,1,5,3,6,4};
+System.out.println(buyandsellstock(prices));
+    }
+    public static int buyandsellstock(int prices[]){
+
+        int buypprice=Integer.MAX_VALUE;
+    
+
+
+        return -1;
+    }
+
+    public static int trappedrainwater(int height[]){
+
+        int n=height.length;
+        int leftmax[]=new int[n];
+        leftmax[0]=height[0];
+
+        for(int i=1;i<height.length;i++){
+            leftmax[i]=Math.max(height[i], leftmax[i-1]);
+        }
+        int rightmax[]=new int [n];
+        rightmax[n-1]=height[n-1];
+        for(int i=n-2;i>=0;i--){
+            rightmax[i]=Math.max(height[i], rightmax[i+1]);
+        }
+        int trappedwater=0;
+        for(int i=0;i<n;i++){
+            int waterlevel=Math.min(leftmax[i], rightmax[i]);
+            trappedwater=trappedwater+(waterlevel-height[i]);
+        }
+
+        return trappedwater;
+
+
+
+    }
+
+    public static void kadanealgorithm(int number[]){
+
+        int currsum=0;
+        int minsum=Integer.MAX_VALUE;
+
+        for(int i=0;i<number.length;i++){
+           currsum=currsum+number[i];
+           if(currsum <0){
+            currsum=0;
+        }
+        minsum=Math.min(currsum, minsum);
+        }
+       
+       
+
+        System.out.println(minsum);
+
+    }
+
+    public static void minsubarraysumusingPrefixmethod(int number[]){
+int currsum=0;
+int minsum=Integer.MAX_VALUE;
+
+int prefix[]=new int[number.length];
+
+prefix[0]=number[0];
+
+for(int i=1;i<prefix.length;i++){
+
+    prefix[i]=prefix[i-1]+number[i];
+}
+
+for(int i=0;i<prefix.length;i++){
+    int start=i;
+    for(int j=i;j<prefix.length;j++){
+        int end=j;
+
+        for(int k=start;k<end;k++){
+
+            currsum=start==0?prefix[end]:prefix[end]-prefix[start-1];
+        }
+        System.out.print(currsum +" ");
+
+        if(currsum<minsum){
+
+            minsum=currsum;
+        }
+    }
+
+}
+System.out.println(minsum);
+
+    }
+
+    public static void minsubarraysumBruteforcemethod(int number[]){
+
+        int currsum=0;
+        int minsum=Integer.MAX_VALUE;
+
+        for(int i=0;i<number.length;i++){
+
+            int start=i;
+            for(int j=i;j<number.length;j++){
+
+                int end=j;
+
+                for(int k=start;k<end;k++){
+
+                    currsum=currsum+number[k];
+
+                }
+                System.out.print(currsum +" ");
+
+                if(currsum<minsum){
+
+                    minsum=currsum;
+                }
+            }
+        }
+        System.out.println(minsum);
+
     }
 
 
