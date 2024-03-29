@@ -86,14 +86,25 @@ public class javaarrayrivision {
 //System.out.println(trappedrainwater(height));
 int prices[]={7,1,5,3,6,4};
 System.out.println(buyandsellstock(prices));
+
     }
     public static int buyandsellstock(int prices[]){
 
         int buypprice=Integer.MAX_VALUE;
     
+        int maxprofit=0;
+        
+        for(int i=0;i<prices.length;i++){
+            if(buypprice<prices[i]){
+                int profit=prices[i]-buypprice;//today profit
+                maxprofit=Math.max(maxprofit, profit); //max profit
+            }else{
+                buypprice=prices[i];
+            }
+        }
 
 
-        return -1;
+        return maxprofit;
     }
 
     public static int trappedrainwater(int height[]){
